@@ -6,15 +6,15 @@ import {connect}  from 'react-redux'
 class App extends React.Component{
         render(){
 
-            const {name, surname, age} = this.props
+            const {user, page} = this.props
             return(
                 <div className={"App"}>
-                    <header>
-                        <h1 className={"App-title"}>Мой Фото</h1>
+                    <header className={"App-header"}>
+                        <h1 className={"App-title"}>Мой топ Фото</h1>
                     </header>
 
-                    <p className="App-intro">Здесь будут мои самые залайканые фото</p>
-                    <p>{ `Меня зовут: ${name} мой фамиля: ${surname} Возраст ${age}`}</p>
+                    <h4 className="App-intro">Привет, {user.name}</h4>
+                    <h3>У тебя {page.photos.length} фото за {page.year}</h3>
                 </div>
             )
         }
@@ -24,9 +24,8 @@ class App extends React.Component{
 const mapStateToProps = store => {
     console.log(store);
     return{
-        name: store.name,
-        surname: store.surname,
-        age: store.age
+        user: store.user,
+        page: store.page
     }
 }
 
