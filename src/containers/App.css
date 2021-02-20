@@ -48,3 +48,8 @@ button{
   width: 250px;
   padding: 10px;
 }
+
+span{
+  font-size: 22px;
+  color: rgb(0, 4, 255)
+}
